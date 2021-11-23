@@ -1,0 +1,17 @@
+<div class="container-fluid ">
+  <div class="font-weight-bold ml-4">Notifications</div>
+  {% for notification in notifications %}
+  <div class="row">
+    {% if notification.review %}
+    <div class="col-3 d-inline-block">
+      <img src="/img/people/{{ notification.review.owner.picture }}.jpg" alt="p" class="rounded-circle square-40 mt-3">
+    </div>
+    {% endif %}
+
+    <div class="col d-inline-block mt-2">
+      {{ notification.text }}
+    </div>
+  </div>
+  <hr>
+  {% endfor %}
+</div>

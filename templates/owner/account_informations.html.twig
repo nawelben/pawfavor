@@ -1,0 +1,92 @@
+{% extends "layout/base.html.twig" %}
+
+{% block title %}Owner account informations{% endblock %}
+
+{% block body %}
+
+  {% include "includes/navbar.html.twig" %}
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------------------->
+
+    <!------------------------------------------------------HEAD CONTENT------------------------------------------------->
+
+    <!------------------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------------------->
+
+    <div class="container py-5">
+
+
+      <div class="row">
+        <div class="col-6">
+          <h1 class="pb-3"> Account</h1>
+
+          <form>
+
+            <div class="col-9 d-inline-block pl-0">
+              <div class="form-group">
+                <label for="exampleInputEmail" class="text-warning font-weight-bold">Email address</label>
+                <input type="email" class="form-control border-0 pl-0" id="exampleInputEmail" aria-describedby="emailHelp" value="rebecca.owner@gmail.com">
+              </div>
+            </div>
+            <div class="col-2 text-right d-inline-block"><span class="text-warning">update</span></div>
+            <hr class="mt-0" style="width:480px; margin-left:0;">
+
+            <div class="col-9 d-inline-block pl-0">
+              <div class="form-group">
+                <label for="exampleInputPassword" class="text-warning font-weight-bold">Password</label>
+                <input type="password" class="form-control border-0 pl-0" id="exampleInputPassword" value="**************">
+              </div>
+            </div>
+            <div class="col-2 text-right d-inline-block"><span class="text-warning">save</span></div>
+            <hr class="mt-0" style="width:480px; margin-left:0;">
+
+            <div class="col-9 d-inline-block pl-0">
+              <div class="form-group">
+                <label for="exampleInputNumber" class="text-warning font-weight-bold">Phone number</label>
+                <input type="text" class="form-control border-0 pl-0" id="exampleInputNumber" value="+33607080910">
+              </div>
+            </div>
+            <div class="col-2 text-right d-inline-block"><span class="text-warning">update</span></div>
+            <hr class="mt-0" style="width:480px; margin-left:0;">
+
+            <div class="col-9 d-inline-block pl-0">
+              <div class="form-group">
+                <label for="exampleInputPayment" class="text-warning font-weight-bold">Payment details</label>
+                <input type="text" class="form-control border-0 pl-0" id="exampleInputPayment" value="XXXX-XXXX-XXXX-1214">
+              </div>
+            </div>
+            <div class="col-2 text-right d-inline-block"><span class="text-warning">update</span></div>
+            <hr class="mt-0" style="width:480px; margin-left:0;">
+
+
+
+          </form>
+        </div>
+
+        <div class="col-4 offset-1 pt-5 px-5">
+          <div class="border-card mt-5 p-4 ">
+            <div class="text-center py-3"><i class="fas fa-info-circle text-warning h1"></i></div>
+            <p>All your data can be edited, however, we recommend you to keep your identity so that your frequent customers do not make mistakes when looking for you.</p>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!------------------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------------------->
+
+    <!------------------------------------------------------FOOTER------------------------------------------------->
+
+    <!------------------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------------------->
+
+
+  {% include "includes/footer.html.twig" %}
+
+
+{% endblock %}

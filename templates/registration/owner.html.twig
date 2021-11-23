@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8"/>
+    <title>Sitter sign up</title>
+
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/dimen.css">
+    <link rel="stylesheet" href="/css/colors.css">
+    <script src="https://kit.fontawesome.com/5c9c988ef6.js" crossorigin="anonymous"></script>
+
+    <style>
+      input {
+        height: 50px !important;
+        border-radius: 10px !important;
+        border: 1px solid black !important;
+        outline: none;
+        outline-width: 0;
+        box-shadow: none !important;
+        padding-left: 22px !important;
+      }
+      .btn-outline-warning:hover {
+        color: white !important;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!------------------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------------------->
+
+    <!------------------------------------------------------HEAD CONTENT------------------------------------------------->
+
+    <!------------------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------------------->
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class=" font-weight-bold text-center border-bottom h1 pt-3 pb-4">
+            Sign Up
+            <div class="d-inline-block float-right">
+              <a class="btn btn-warning text-white rounded-pill text-center " href="/registration_sitter">
+                BECOME SITTER</a>
+            </div>
+          </div>
+          <div class="py-3">
+
+            {{ form_start(form) }}
+            <!-- {{ form_row(form.name, {'attr': {'class': 'form-control'}}) }} {{ form_row(form.email, {'attr': {'class': 'form-control'}}) }} {{ form_row(form.password, {'attr': {'class': 'form-control'}}) }}  {{ form_row(form.location, {'attr': {'class': 'form-control'}}) }} {{ form_row(form.phone, {'attr': {'class': 'form-control'}}) }} {{ form_row(form.picture, {'attr': {'class': 'form-control'}}) }} -->
+
+            <div class="row">
+              <div class="col p-3 pr-4 pl-5">
+                <label for="inputEmail" class="font-weight-bold h5">Name</label>
+                <input type="text" class="form-control" placeholder="Your name here" name="user[name]">
+              </div>
+              <div class="col p-3 pr-4 pl-5">
+                <label for="inputEmail" class="font-weight-bold h5">Last name</label>
+                <input type="text" class="form-control" placeholder="Your last name here" name="_lastname">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col p-3 pr-4 pl-5">
+                <label for="inputEmail" class="font-weight-bold h5">E-mail</label>
+                <input type="email" class="form-control" placeholder="Your e-mail here" name="user[email]">
+              </div>
+              <div class="col p-3 pr-4 pl-5">
+                <label for="inputPassword" class="font-weight-bold h5">Password</label>
+                <input type="password" class="form-control" placeholder="**********" name="user[password]">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4 offset-4 py-3">
+                <div class="custom-control custom-checkbox py-3">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1" required>
+                  <label class="custom-control-label font-weight-bold" for="customCheck1">I accept terms, conditions & privacy policy</label>
+                </div>
+                <button class="btn btn-block btn-warning text-white py-2 mt-2" style="border-radius: 10px;">SIGN UP</button>
+              </div>
+            </div>
+
+            {{ form_end(form) }}
+
+          </div>
+
+          <div class="row">
+            <div class="col-8 offset-2 d-flex">
+              <div class="flex-grow-1"><hr style="border-bottom: 1px solid gray;"></div>
+              <div class="px-3 font-weight-bold" style="padding-top: 2px;">OR</div>
+              <div class="flex-grow-1"><hr style="border-bottom: 1px solid gray;"></div>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8 offset-2 d-flex py-4">
+
+              <button class="btn btn-block btn-outline-warning py-2 mt-2 flex-grow-1 mr-3" style="border-radius: 10px;">SIGN UP WITH GOOGLE</button>
+              <button class="btn btn-block btn-outline-warning py-2 mt-2 flex-grow-1 ml-3" style="border-radius: 10px;">SIGN UP WITH FACEBOOK</button>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ------------------------------------------------------------------------------------------------------------ -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/base.js"></script>
+
+  </body>
+
+</html>

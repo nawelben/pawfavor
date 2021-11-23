@@ -1,0 +1,47 @@
+{% set currentRouteName = app.request.get('_route') %}
+
+
+<div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
+  <ul class="navbar-nav">
+    <li class="nav-item px-2 {% if currentRouteName == "sitter_dashboard" %}active{% endif %}">
+      <a class="nav-link {% if currentRouteName == "public_home" %}text-white{% else %}text-dark{% endif %}" href="{{path('sitter_dashboard')}}">DASHBOARD</a>
+    </li>
+    <li class="nav-item px-2 {% if currentRouteName == "sitter_bookings" %}active{% endif %}">
+      <a class="nav-link {% if currentRouteName == "public_home" %}text-white{% else %}text-dark{% endif %}" href="{{path('sitter_bookings')}}">BOOKINGS</a>
+    </li>
+    <li class="nav-item px-2 {% if currentRouteName == "sitter_inbox" %}active{% endif %}">
+      <a class="nav-link {% if currentRouteName == "public_home" %}text-white{% else %}text-dark{% endif %}" href="{{path('sitter_inbox')}}">INBOX</a>
+    </li>
+    <li class="nav-item px-2 {% if currentRouteName == "sitter_calendar" %}active{% endif %}">
+      <a class="nav-link {% if currentRouteName == "public_home" %}text-white{% else %}text-dark{% endif %}" href="{{path('sitter_calendar')}}">CALENDAR</a>
+    </li>
+    <li class="nav-item px-2 ">
+      <a class="nav-link {% if currentRouteName == "public_home" %}text-white{% else %}text-dark{% endif %}" href="#">PERFORMANCE</a>
+    </li>
+  </ul>
+</div>
+<div class="ml-left d-inline-block mr-2 position-relative">
+  <div class="text-warning d-inline-block mr-2 ">Switch to owner</div>
+  <div class="bg-warning rounded-pill d-inline-block p-1 upper-show-menu"  style="cursor: pointer;"
+  >
+    <img src="/img/people/{% if app.user.picture %}{{app.user.picture}}{% else %}unknown{% endif %}.jpg" alt="p" class="d-inline-block rounded-circle square-40">
+    <i class="fas fa-chevron-up text-white d-inline-block pr-1 rotate-z-180 transition_03s"></i>
+  </div>
+
+  <div class="profile-position-absolute bg-white d-none " style="z-index: 3;">
+    <div class="my-2 pl-4 "><a class="text-dark" style="text-decoration: none;" href="{{path('sitter_profile')}}">Profile <i class="mr-3 mt-2 fas fa-user float-right"></i></a></div>
+    <div class="my-2 pl-4 "><a class="text-dark" style="text-decoration: none;" href="{{path('sitter_account_informations')}}">Personal Info</a></div>
+    <div class="my-2 pl-4"><a class="text-dark" style="text-decoration: none;" href="{{path('sitter_preferences')}}">Preferences</a></div>
+    <hr class="mx-2 my-2">
+    <div class="my-2 pl-4">Invite friends <i class="mr-3 mt-2 fas fa-gift float-right"></i></div>
+    <div class="my-2 pl-4">Refer a sitter</div>
+    <hr class="mx-2 my-2">
+    <div class="my-2 pl-4">Help center <i class="mr-3 mt-2 fas fa-question-circle float-right"></i></div>
+    <div class="my-2 pl-4">FAQ</div>
+    <hr class="mx-2 my-2">
+    <div class="my-2 pl-4">English (EN) <i class="mr-3 mt-2 fas fa-globe float-right"></i></div>
+    <hr class="mx-2 my-2">
+    <div class="my-2 pl-4 mb-2"><a class="text-dark" style="text-decoration: none;" href="{{path('app_logout')}}">Log out<i class="mr-3 mt-2 fas fa-sign-out-alt float-right"></i></a></div>
+  </div>
+
+</div>

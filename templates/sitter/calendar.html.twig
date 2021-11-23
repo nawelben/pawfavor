@@ -1,0 +1,121 @@
+{% extends "layout/base.html.twig" %}
+
+{% block title %}Paw Favor - Home{% endblock %}
+
+{% block body %}
+
+  {% include "includes/navbar.html.twig" %}
+
+
+  <!------------------------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------------------------->
+
+  <!------------------------------------------------------HEAD CONTENT------------------------------------------------->
+
+  <!------------------------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------------------------->
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-8">
+        <h3 class="font-weight-bold border-bottom p-3">Calendar</h3>
+        <h4 class="p-3">February 2021<i class="fas fa-chevron-down ml-1 h6"></i></h4>
+
+        <div class="px-3">
+          <div class="days-container">
+            <div class="calendar-day-name">Mo</div>
+            <div class="calendar-day-name">Tu</div>
+            <div class="calendar-day-name">We</div>
+            <div class="calendar-day-name">Th</div>
+            <div class="calendar-day-name">Fr</div>
+            <div class="calendar-day-name">Sa</div>
+            <div class="calendar-day-name">Su</div>
+          </div>
+          <div class="calendar-days-container">
+
+          </div>
+        </div>
+
+
+      </div>
+      <div class="col-4 p-4 border-left">
+        <h4 class="mb-4">Update your calendar regularly to get more visibility</h4>
+
+        <h5 class="font-weight-bold mb-2">Pro Tips</h5>
+        <p>You can always change your availability but make sure you don't already have an ongoing booking before making yourself unavailable.</p>
+        <button class="btn btn-warning btn-block my-5 text-white rounded-lg py-2">MANAGE AVAILABILITY</button>
+      </div>
+    </div>
+  </div>
+
+
+    {% include "includes/footer.html.twig" %}
+
+
+{% endblock %}
+
+{% block javascripts %}
+<script>
+  function daysInThisMonth() {
+    var now = new Date();
+    return new Date(now.getFullYear(), now.getMonth()+1, 0).getDate();
+  }
+
+  function currentMonthName(){
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+
+    const d = new Date();
+    return monthNames[d.getMonth()];
+  }
+
+  function currentYear(){
+    return new Date().getFullYear();
+  }
+
+  function currentDay(){
+    var A = new Date();
+    return A.getDate();
+  }
+
+  function firstDayInCurrentMonth(){
+    const d = new Date();
+    var A = new Date(currentYear(),d.getMonth(),0 );
+    return A.getDay();
+  }
+
+  $( document ).ready(function(){
+
+
+    var actualDay = 0;
+    for(let j=0; j<7; j++){
+      if(j >= firstDayInCurrentMonth()){
+        $('.calendar-days-container').append('<div class="calendar-day px-1"><span class="float-right">'+(actualDay+1)+'</span><hr class="undisponible-day m-0" /></div>');
+        actualDay++;
+      }else{
+        $('.calendar-days-container').append('<div class="calendar-day px-1"><span class="float-right"></span><hr class="undisponible-day m-0" /></div>');
+      }
+    }
+    for (let i = 1; i < 6; i++) {
+      if((7*i + 6)<daysInThisMonth())
+        for(let j =0 ; j<7; j++){
+          if((7*i + j)<daysInThisMonth()){
+            $('.calendar-days-container').append('<div class="calendar-day px-1"><span class="float-right">'+(actualDay+1)+'</span><hr class="undisponible-day m-0" /></div>');
+            actualDay++;
+          }else{
+            $('.calendar-days-container').append('<div class="calendar-day px-1"><span class="float-right"></span><hr class="undisponible-day m-0" /></div>');
+          }
+
+        }
+
+    }
+    $(".calendar-day").each(function(item){
+      $(this).css('height', $(this).width()+"px");
+    })
+
+  })
+
+</script>
+{% endblock %}

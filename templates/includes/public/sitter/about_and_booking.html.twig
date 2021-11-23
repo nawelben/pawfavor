@@ -1,0 +1,116 @@
+<div class="container py-4">
+  <div class="row">
+    <div class="col-8">
+      <div class="row">
+        <div class="col-5"><img src="/img/people/{% if sitter.picture %}{{sitter.picture}}{% else %}unknown{% endif %}.jpg" alt="lila" class="img-fluid img-border"> </div>
+        <div class="col-7">
+          <div class="font-weight-bold">
+        <h1 class="h1 d-inline-block font-weight-bold">{{sitter.name}}</h1>{% if app.user and app.user.id != sitter.id %}<i class="fas fa-heart float-right d-inline-block h4 pt-2"></i>{% endif %}
+            <hr style="max-width:60px; margin-inline-start: 0px;">
+          </div>
+          <div class="font-weight-bold h4">{% if sitter.sitterAbout %}{{sitter.sitterAbout.short}}{% endif %}</div>
+          <div class="text-muted">{{sitter.location}}</div>
+          <div class="text-muted border d-inline-block p-1 px-2 rounded-lg my-2"><i class="fas fa-award pr-2"></i>Supper sitter</div>
+          <div><i class="fas fa-star text-warning pr-2"></i>4,3 (54 reviews)</div>
+          <div class="div pt-3">
+            <img src="/img/dog/dog7.jpg" alt="dog" class="img-fluid rounded-circle square-40">
+            <img src="/img/dog/dog8.jpg" alt="dog" class="img-fluid rounded-circle square-40">
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col">
+          <h4 class="font-weight-bold pb-1">About {{sitter.name}}</h4>
+          {% if sitter.sitterAbout %}<p>{{sitter.sitterAbout.longDescription}}</p>{% else %}No description yet.{% endif %}
+          <div class="py-2"><i class="fas fa-check-circle mr-2"></i>Verified account</div>
+        </div>
+      </div>
+    </div>
+      <hr>
+
+    <div class="col-4" style="position: relative">
+      {% if app.user %}
+        {% if sitter.id == app.user.id %}
+          <div style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1; background-color: rgba(255,255,255,0.7)"></div>
+        {% endif %}
+      {% endif %}
+      <div class="conatiner border-card">
+        <div class="row">
+          <div class="col py-3 px-5">
+            <div class="font-weight-bold h5 d-inline-block __booking_service_name">--</div>
+            <div class="float-right d-inline-block"><span class="h6 mt-2 font-weight-bold">$ <span class="__booking_service_price">0</span> AUD</span> <span class="text-muted d-inline-block">/day</span></div>
+          </div>
+        </div>
+        <hr class="mt-0">
+        <div class="row">
+          <div class="col px-5">
+            <form action="" method="post">
+              <label for="" class="mt-2 font-weight-bold">Service</label>
+              <select name="_service" id="" class="form-control mb-3">
+                <option disabled selected>Select a service</option>
+                {% for sitterServicePrice in sitterServicePrices %}
+                <option value="{{sitterServicePrice.service.id}}" data-price="{{sitterServicePrice.price}}">{{sitterServicePrice.service.name}}</option>
+                {% endfor %}
+              </select>
+              <label for="" class="mt-2 font-weight-bold">Pet(s)</label>
+              <select multiple name="_pets[]" id="" class="form-control mb-3">
+                <option selected disabled>Choose your pet(s)</option>
+                {% for pet in pets %}
+                  <option value="{{pet.id}}">{{pet.name}}</option>
+                {% endfor %}
+              </select>
+              <div class="row mb-3">
+                <div class="col-6">
+                  <label for="" class="mt-2 font-weight-bold">Start</label>
+                  <input type="date" name="_start" class="form-control border-lg">
+                </div>
+                <div class="col-6">
+                  <label for="" class="mt-2 font-weight-bold">End</label>
+                  <input type="date" name="_end" class="form-control border-lg">
+                </div>
+
+              </div>
+              <span class="btn btn-warning btn-block text-white text-center" data-toggle="modal" data-target="#exampleModal" >CONTACT {{sitter.name|upper}}</span>
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title font-weight-bold" id="exampleModalLabel">Your message</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="form-group">
+
+                        <textarea name="_message" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-warning  text-white text-center" type="submit" >BOOK NOW</button>
+                      <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <input type="hidden" name="_total_price" class="__total_price_hidden">
+            </form>
+          </div>
+        </div>
+        <hr class="mt-4">
+        <div class="row">
+          <div class="col pb-2 px-5">
+            <div class="font-weight-bold h5 d-inline-block">Total</div>
+            <div class="float-right d-inline-block ">$ <span class="__total_price">0</span> AUD</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

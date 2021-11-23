@@ -1,0 +1,77 @@
+<div class="col">
+  <h4 class="font-weight-bold p-3 border-bottom">
+    <img src="/img/people/{{actualConversation.owner.picture}}.jpg"  style="margin-top: -8px;" alt="" class="square-30 rounded-circle mr-2">{{actualConversation.owner.name}}
+  </h4>
+  <div class="messages-col border-right messages_container">
+
+
+    {% for message in messages %}
+
+      {% if message.sitter.id == message.reciever.id %}
+      <div class="recieved-message d-flex mb-2">
+        <div class="pr-1 pl-3">
+          <img src="/img/people/{{message.owner.picture}}.jpg" alt="" class="square-30 rounded-circle">
+        </div>
+        <div class="flex-grow-1 bd-highlight">
+          <p class="p-2 pl-3 mb-0  revieved-message-text">
+            {{message.content|nl2br}}
+          </p>
+          <p class="mb-0 text-muted pl-3"><small>{{message.date|date('Y-m-d\\TH:i:sP')}}</small></p>
+
+        </div>
+      </div>
+      {% else %}
+
+      <div class="sent-message d-flex mb-2">
+
+        <div class="flex-grow-1 bd-highlight">
+          <p class="p-2 pl-3 mb-0  sent-message-text">
+              {{message.content|nl2br}}
+          </p>
+          <p class="mb-0 text-muted pr-3 float-right"><small>{{message.date|date('Y-m-d\\TH:i:sP')}}</small></p>
+
+        </div>
+        <div class="pl-1 pr-3">
+          <img src="/img/people/{{message.sitter.picture}}.jpg" alt="" class="square-30 rounded-circle">
+        </div>
+      </div>
+
+      {% endif %}
+
+    {% endfor %}
+
+    <div class="sent-message" style="min-height: 3.5rem;">&nbsp;</div>
+
+
+
+
+
+    <div class="messages-type-message pt-2">
+
+
+      <form action="" method="POST">
+        <div class="d-flex ">
+
+          <div class="flex-grow-1 px-2">
+            <div class="input-group mb-1 border rounded-pill p-2">
+
+                <input name="_content" type="text" class="form-control border-0" placeholder="Your message" aria-label="Recipient's username" aria-describedby="basic-addon2">
+
+                <div class="input-group-append bg-white pl-2">
+                  <button class="btn-warning border-0 px-2 rounded-circle" type="submit">
+                    <i class="fas fa-paper-plane mr-1 text-white"></i>
+                  </button>
+                </div>
+                {% if actualConversation %}<input name="owner_id" value="{{actualConversation.owner.id}}" type="hidden">{% endif %}
+
+            </div>
+          </div>
+
+        </div>
+      </form>
+
+
+
+    </div>
+  </div>
+</div>

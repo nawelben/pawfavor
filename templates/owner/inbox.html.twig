@@ -1,0 +1,43 @@
+{% extends "layout/base.html.twig" %}
+
+{% block title %}Paw Favor - Home{% endblock %}
+
+{% block body %}
+
+  {% include "includes/navbar.html.twig" %}
+
+
+  <!------------------------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------------------------->
+
+  <!------------------------------------------------------HEAD CONTENT------------------------------------------------->
+
+  <!------------------------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------------------------->
+
+
+<div class="container-fluid ">
+  <div class="row">
+
+    <!-- Conversations -->
+    {% include "includes/owner/inbox/conversations.html.twig" %}
+
+    <!-- Messages  -->
+    {% include "includes/owner/inbox/messages.html.twig" %}
+
+    <!-- Booking details -->
+    {% include "includes/owner/inbox/booking_details.html.twig" %}
+
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+<script>
+  $(document).ready(function(){
+    $('.messages_container').scrollTop($('.messages_container')[0].scrollHeight);
+  });
+</script>
+{% endblock %}

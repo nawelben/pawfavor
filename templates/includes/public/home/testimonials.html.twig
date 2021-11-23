@@ -1,0 +1,65 @@
+<div class="container-fluid">
+
+  <div class="row py-4">
+    <div class="col">
+      <h3 class="text-center text-warning font-weight-bold py-3">What our owners think</h3>
+
+      <div id="carouselExampleControls" class="carousel slide w-75 mx-auto" data-ride="carousel">
+
+        {% set counter = 0 %}
+        <div class="carousel-inner">
+          <div class="carousel-item active px-3">
+            <div class="row">
+              {% for testimonial in testimonials %}
+                {% if (counter >= 0) and (counter < 3) %}
+                <div class="col-4 p-3">
+                  <card class="bg-white d-block p-5 border-card">
+                    <div class="text-center"><span class="py-5 px-5 rounded-circle bg-warning d-inline-block bg-img-person1" style="background-image:url('/img/people/{{ testimonial.user.picture }}.jpg');"></span><br></div>
+                    <h5 class="font-weight-bold text-center pt-2">{{ testimonial.user.name }}<br></h5>
+                    <div class="text-center p-1">{{ testimonial.comment }}</div>
+                  </card>
+                </div>
+
+                {% endif %}
+                {% set counter = counter + 1 %}
+              {% endfor %}
+            </div>
+          </div>
+
+          {% set counter = 0 %}
+          <div class="carousel-item px-3">
+            <div class="row">
+              {% for testimonial in testimonials %}
+                {% if (counter >= 3) and (counter < 6) %}
+                <div class="col-4 p-3">
+                  <card class="bg-white d-block p-5 border-card">
+                    <div class="text-center"><span class="py-5 px-5 rounded-circle bg-warning d-inline-block bg-img-person1" style="background-image:url('/img/people/{{ testimonial.user.picture }}.jpg');"></span><br></div>
+                    <h5 class="font-weight-bold text-center pt-2">{{ testimonial.user.name }}<br></h5>
+                    <div class="text-center p-1">{{ testimonial.comment }}</div>
+                  </card>
+                </div>
+
+                {% endif %}
+                {% set counter = counter + 1 %}
+              {% endfor %}
+            </div>
+          </div>
+
+
+
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" style="left: -150px;">
+          <span class="carousel-control text-secondary rounded-circle shadow-chevron px-2" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next" style="right: -150px;">
+          <span class="carousel-control text-secondary rounded-circle shadow-chevron px-2" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      <h5 class="text-warning text-center pt-5">Explore more testimonies</h5>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="row">
+        <div class="col-12 pb-3">
+          <h4 class="font-weight-bold">Pet accepted</h4>
+        </div>
+        <div class="col-12">
+          <div class="row">
+
+            {% if sitterPetCategories and (sitterPetCategories.xsmall or sitterPetCategories.small or sitterPetCategories.medium or sitterPetCategories.large or sitterPetCategories.xlarge or sitterPetCategories.cats or sitterPetCategories.birds or sitterPetCategories.guineapigs) %}
+            {% if sitterPetCategories.xsmall %}
+            <div class="col-2 mr-1 pb-2">
+              <img src="/img/icones/svg/Property 1=X-Small.svg" alt="" class="img-fluid border w-100 mb-2 rounded-lg">
+              <div class="mx-2 text-center">X-Small</div>
+            </div>
+            {% endif %}
+
+            {% if sitterPetCategories.small %}
+            <div class="col-2 mr-1 pb-2">
+              <img src="/img/icones/svg/Property 1=Small.svg" alt="" class="img-fluid border w-100 mb-2 rounded-lg">
+              <div class="mx-2 text-center">Small</div>
+            </div>
+            {% endif %}
+
+            {% if sitterPetCategories.medium %}
+            <div class="col-2 mr-1 pb-2">
+              <img src="/img/icones/svg/Property 1=Medium.svg" alt="" class="img-fluid border w-100 mb-2 rounded-lg">
+              <div class="mx-2 text-center">Medium</div>
+            </div>
+            {% endif %}
+
+            {% if sitterPetCategories.large %}
+            <div class="col-2 mr-1 pb-2">
+              <img src="/img/icones/svg/Property 1=Large.svg" alt="" class="img-fluid border w-100 mb-2 rounded-lg">
+              <div class="mx-2 text-center">Large</div>
+            </div>
+            {% endif %}
+
+            {% if sitterPetCategories.xlarge %}
+            <div class="col-2 mr-1 pb-2">
+              <img src="/img/icones/svg/Property 1=X-Large.svg" alt="" class="img-fluid border w-100 mb-2 rounded-lg">
+              <div class="mx-2 text-center">X-Large</div>
+            </div>
+            {% endif %}
+
+            {% if sitterPetCategories.cats %}
+            <div class="col-2 mr-1 pb-2">
+              <img src="/img/icones/svg/Property 1=Cat.svg" alt="" class="img-fluid border w-100 mb-2 rounded-lg">
+              <div class="mx-2 text-center">Cat</div>
+            </div>
+            {% endif %}
+
+            {% if sitterPetCategories.birds %}
+            <div class="col-2 mr-1 pb-2">
+              <img src="/img/icones/svg/Property 1=Bird.svg" alt="" class="img-fluid border w-100 mb-2 rounded-lg">
+              <div class="mx-2 text-center">Bird</div>
+            </div>
+            {% endif %}
+
+            {% if sitterPetCategories.guineapigs %}
+            <div class="col-2 mr-1 pb-2">
+              <img src="/img/icones/svg/Property 1=Guinea pig.svg" alt="" class="img-fluid border w-100 mb-2 rounded-lg">
+              <div class="mx-2 text-center">Guinea Pig</div>
+            </div>
+            {% endif %}
+
+            {% else %}
+            <div class="col-12 pb-3">
+              This sitter does not indicate accepting any pet.
+            </div>
+            {% endif %}
+          </div>
+        </div>
+
+      </div>
+      <hr>
+    </div>
+  </div>
+
+</div>

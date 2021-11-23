@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col">
+    <ul class="nav nav-tabs mt-4" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link " id="upcoming-tab" data-toggle="tab" href="#upcoming_content" role="tab" aria-controls="home" aria-selected="true">Upcoming</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="awaiting-tab" data-toggle="tab" href="#awaiting_content" role="tab" aria-controls="profile" aria-selected="false">Awaiting</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="completed-tab" data-toggle="tab" href="#completed_content" role="tab" aria-controls="contact" aria-selected="false">Completed</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="cancelled-tab" data-toggle="tab" href="#cancelled_content" role="tab" aria-controls="contact" aria-selected="false">Cancelled</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="all-tab" data-toggle="tab" href="#all_content" role="tab" aria-controls="contact" aria-selected="false">All</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade " id="upcoming_content" role="tabpanel" aria-labelledby="home-tab">
+        {% include "includes/owner/bookings/upcoming_bookings.html.twig" %}
+      </div>
+      <div class="tab-pane fade show active" id="awaiting_content" role="tabpanel" aria-labelledby="profile-tab">
+        {% include "includes/owner/bookings/awaiting_bookings.html.twig" %}
+      </div>
+      <div class="tab-pane fade" id="completed_content" role="tabpanel" aria-labelledby="contact-tab">
+        {% include "includes/owner/bookings/completed_bookings.html.twig" %}
+      </div>
+      <div class="tab-pane fade" id="cancelled_content" role="tabpanel" aria-labelledby="contact-tab">
+        {% include "includes/owner/bookings/cancelled_bookings.html.twig" %}
+      </div>
+      <div class="tab-pane fade" id="all_content" role="tabpanel" aria-labelledby="contact-tab">
+        {% include "includes/owner/bookings/all_bookings.html.twig" %}
+      </div>
+    </div>
+  </div>
+</div>

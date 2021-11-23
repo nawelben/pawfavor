@@ -1,0 +1,111 @@
+<div class="col-3">
+  <h4 class="font-weight-bold py-3 pl-3 border-bottom">
+    Booking details
+  </h4>
+  <div class="messages-col ">
+
+    {% if booking != null %}
+
+    <div class="px-3">
+      <h3 class="mb-0">{{booking.service.name}}</h3>
+      <p class="mb-0">{{booking.start|date("d/m")}}</p>
+
+      <hr class="mr-3">
+
+      <p class="mb-0 font-weight-bold">Owner</p>
+      <div class="d-flex mb-3">
+        <img src="/img/people/{{booking.owner.picture}}.jpg" alt="" class="square-30 rounded-circle mr-2">
+        <span class="my-auto">{{booking.owner.name}}</span>
+      </div>
+
+      {% set hasPets = false %}
+      {% set hasUnknownPets = false %}
+
+      {% for detail in  booking.bookingDetails %}
+      {% if detail.pet %}
+        {% set hasPets = true %}
+      {% endif %}
+      {% if detail.unknownPet %}
+      {% set hasUnknownPets = true %}
+      {% endif %}
+      {% endfor %}
+
+
+      {% if (hasPets == true) or (hasUnknownPets == true) %}
+      <p class="mb-0 font-weight-bold">Pets</p>
+      <div class="d-flex flex-wrap">
+        {% for detail in  booking.bookingDetails %}
+        {% if detail.pet %}
+          <div class="d-flex mb-3 pr-2">
+            <img src="/img/dog/dog2.jpg" alt="" class="square-30 rounded-circle mr-2">
+            <span class="my-auto">Andy</span>
+          </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+
+      {% for detail in  booking.bookingDetails %}
+        {% if detail.unknownPet %}
+        <div><strong>(?) </strong>{{detail.unknownPet}}</div>
+        {% endif %}
+      {% endfor %}
+
+      {% endif %}
+
+
+
+
+      <hr class="mr-3">
+      <p class="mb-0 font-weight-bold">Where</p>
+      <div class="mb-3">
+        {% if booking.service.id != 1 %}{{booking.owner.location}}{% else %}At your house{% endif %}
+         <i class="fas fa-map-marker-alt bg-warning text-white"></i>
+      </div>
+      {% if booking.service.id != 1 %}
+      <p class="mb-0 font-weight-bold">Transport</p>
+      <div class="mb-3">
+        Pick up at {{booking.owner.name}}'s house
+      </div>{{booking.owner.location}}
+      {% else %}At your house{% endif %}
+
+
+      <hr class="mr-3">
+      <p class="mb-0 font-weight-bold">Status</p>
+      <div class="mb-3">
+        {{booking.state}}
+      </div>
+      <p class="mb-0 font-weight-bold">Total</p>
+      <div class="mb-3">
+        $ {{booking.totalPrice}} AUD
+      </div>
+      <p class="mb-0 font-weight-bold">Cancellation policy</p>
+      <div class="mb-3">
+        Moderate <i class="fas fa-info-circle text-warning text-white"></i>
+      </div>
+
+
+      {% if booking.state == "awaiting" %}
+      <div class="text-center pt-4">
+        <form class="d-inline-block" action="" method="post">
+          <button class="btn btn-warning text-white rounded-pill" type="submit">ACCEPT BOOKING</button>
+          <input type="hidden" name="__accept_booking" value=" ">
+          <input type="hidden" name="__booking_id" value="{{booking.id}}">
+        </form>
+        <form class="d-inline-block" action="" method="post">
+        <button class="btn btn-outline-warning  rounded-pill" type="submit">DECLINE</button>
+        <input type="hidden" name="__decline_booking" value=" ">
+        <input type="hidden" name="__booking_id" value="{{booking.id}}">
+        </form>
+      </div>
+      {% endif %}
+
+
+
+    </div>
+    <div style="min-height: 2.5rem;"></div>
+
+  {% else %}
+    No booking yet
+  {% endif %}
+  </div>
+</div>

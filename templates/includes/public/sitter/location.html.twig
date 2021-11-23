@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="row">
+        <div class="col-12 pb-2">
+          <h4 class="font-weight-bold">Location</h4>
+        </div>
+        <div class="col-12 pb-1">
+          <h6 class="font-weight-bold">About {{sitter.name|split(' ')[0]}}'s home</h6>
+        </div>
+        {% if sitterHome and (sitterHome.bigHouse or  sitterHome.parkNearby or  sitterHome.dogParkNearby or  sitterHome.outDoorArea or  sitterHome.fencedBackyard) %}
+          {% if sitterHome.bigHouse %}
+          <div class="col-4 mb-2">
+            <img src="/img/icones/svg/Property 1=House.svg" alt="" class="img-fluid d-inline-bolck">
+            <div class="d-inline-block mx-2">Big house</div>
+          </div>
+          {% endif %}
+
+          {% if sitterHome.parkNearby %}
+          <div class="col-4 mb-2">
+            <img src="/img/icones/svg/Property 1=Park.svg" alt="" class="img-fluid d-inline-bolck">
+            <div class="d-inline-block mx-2">Park nearby</div>
+          </div>
+          {% endif %}
+
+          {% if sitterHome.dogParkNearby %}
+          <div class="col-4 mb-2">
+            <img src="/img/icones/svg/Property 1=Dog park.svg" alt="" class="img-fluid d-inline-bolck">
+            <div class="d-inline-block mx-2">Dog park nearby</div>
+          </div>
+          {% endif %}
+
+          {% if sitterHome.outDoorArea %}
+          <div class="col-4 mb-2">
+            <img src="/img/icones/svg/Property 1=Grass.svg" alt="" class="img-fluid d-inline-bolck">
+            <div class="d-inline-block mx-2">Outdoor Area</div>
+          </div>
+          {% endif %}
+
+          {% if sitterHome.fencedBackyard %}
+          <div class="col-4 mb-2">
+            <img src="/img/icones/svg/Property 1=Fence.svg" alt="" class="img-fluid d-inline-bolck">
+            <div class="d-inline-block mx-2">Fenced Backyard</div>
+          </div>
+          {% endif %}
+
+        {% endif %}
+        <div class="col-12 pt-4 pb-3"><img src="/img/map.png" alt="" class="img-fluid"></div>
+      </div>
+      <hr>
+    </div>
+  </div>
+
+</div>

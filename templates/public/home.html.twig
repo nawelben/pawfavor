@@ -1,0 +1,155 @@
+{% extends "layout/base.html.twig" %}
+
+{% block title %}Paw Favor - Home{% endblock %}
+
+{% block stylesheets %}
+  <style>
+    .location_home_input:focus{
+        outline: none;
+        outline-width: 0;
+        box-shadow: none !important;
+    }
+
+    .location_home_input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #333333;
+    }
+
+    .index-search-location-item{
+      cursor: pointer;
+    }
+
+    .index-search-location-item:hover{
+      background-color: #EEEEEE;
+    }
+
+    .index-search-service-item{
+      cursor: pointer
+    }
+    .index-search-service-item:hover{
+      background-color: #EEEEEE;
+    }
+
+    .index-search-service-name{
+      cursor: pointer;
+    }
+    .location_home_input{
+      cursor: pointer;
+    }
+
+    ._trans06{
+      transition: .6s all;
+    }
+
+    .left{
+    	transform: translateX(-200%);
+    }
+
+    .right{
+    	transform: translateX(200%);
+    }
+
+    .r_left{
+    	transform: rotateY(0.75turn);
+    }
+
+    .r_right{
+    	transform: rotateY(-0.75turn);
+    }
+</style>
+
+{% endblock %}
+
+{% block body %}
+
+  {% include "includes/navbar.html.twig" %}
+
+
+  <!------------------------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------------------------->
+
+  <!------------------------------------------------------HEAD CONTENT------------------------------------------------->
+
+  <!------------------------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------------------------->
+
+  {% include "includes/public/home/upper_header.html.twig" %}
+
+  {% include "includes/public/home/how_it_works.html.twig" %}
+
+  {% include "includes/public/home/services.html.twig" %}
+
+  {% include "includes/public/home/testimonials.html.twig" %}
+
+  {% include "includes/public/home/discount_pet_stores.html.twig" %}
+
+  {% include "includes/public/home/faq.html.twig" %}
+
+  <!------------------------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------------------------->
+
+  <!------------------------------------------------------FOOTER------------------------------------------------------->
+
+  <!------------------------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------------------------->
+
+  {% include "includes/footer.html.twig" %}
+
+
+{% endblock %}
+
+{% block javascripts %}
+<script>
+  $('body').on('input', '.location_home_input', function(){
+    if($(this).val().length > 0){
+      $('.index-search').removeClass('d-none');
+    }else{
+      $('.index-search').addClass('d-none');
+    }
+  })
+
+  $('body').on('focus', '.location_home_input', function(){
+    $('.index-search').removeClass('d-none');
+  })
+
+
+  $('body').on('click', '.index-search-location-item', function(){
+    $('.location_home_input').val($(this).attr('data-content'));
+    $('.index-search').addClass('d-none');
+    $('.__hidden_location').val($(this).attr('data-content'));
+  })
+
+  $('body').on('click', '.index-search-service-name', function(){
+    if($('.index-search-services').hasClass('d-none')){
+      $('.index-search-services').removeClass('d-none')
+    }else{
+      $('.index-search-services').addClass('d-none')
+    }
+  })
+
+  $('body').on('click', '.index-search-service-item', function(){
+    $('.index-search-service-name').text($(this).attr('data-content'));
+    $('.index-search-services').addClass('d-none')
+    $('.__hidden_service').val($(this).attr('data-content'));
+  })
+</script>
+
+<script>
+$(window).scroll(function() {
+
+    var OFFSET_LR = 500;
+
+
+
+    $('.left,.right,.r_left,.r_right').each(function(){
+      var ths=$(this);
+      if($(document).scrollTop()>=$(this).offset().top-OFFSET_LR)
+        ths.removeClass('left').removeClass('right').removeClass('r_left').removeClass('r_right');
+    });
+
+
+
+
+
+  });
+</script>
+{% endblock %}

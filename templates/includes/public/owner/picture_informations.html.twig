@@ -1,0 +1,28 @@
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col bg-blue position-relative">
+        <div class="profile-pic-container d-flex">
+          <img src="/img/people/{% if owner.picture %}{{owner.picture}}{% else %}unknown{% endif %}.jpg" alt="" class="square-200">
+          <div class="d-inline-block mx-4 mt-auto"><h4 class="font-weight-bold d-inline-block mr-2">{{owner.name}}</h4><i class="fas fa-check-circle mx-1"></i><span class="text-muted">Verified account</span></div>
+          {% if ( app.user ) and (owner.id == app.user.id) %}<a href="#" class="text-dark">
+            <div style="position: absolute; bottom: 80px; left: 80px;">
+              <i class="fas fa-camera h4 bg-white rounded-circle p-2"></i>
+            </div>
+          </a>{% endif %}
+
+        </div>
+        {% if ( app.user ) and (owner.id == app.user.id) %}
+        <div class="text-center" style="position:absolute;right:50px; bottom:10px;">
+          <i class="fas fa-camera text-white h4 mb-0"></i>
+          <div class="text-white"><a href="#" class="text-white"><ins>Edit Background</ins></a></div>
+        </div>
+      {% endif %}
+      </div>
+    </div>
+    <div class="row pt-4 mt-5">
+      <div class="col-12 pb-5">
+        <i class="fas fa-map-marker-alt" style="margin-left: 50px;"></i> {{owner.location}} {% if ( app.user ) and (owner.id == app.user.id) %}<a href="#" class="text-dark"><ins>Edit section</ins></a>{% endif %}
+      </div>
+    </div>
+  </div>

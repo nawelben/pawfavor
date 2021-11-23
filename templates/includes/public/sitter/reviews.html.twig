@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="row">
+        <div class="col-12 py-2">
+          {% if reviews %}
+          {% set avg = 0 %}
+          {% for review in reviews %}
+            {% set avg = avg + review.rate %}
+          {% endfor %}
+          {% set avg = avg / (reviews|length) %}
+          {% endif %}
+          <h4 class=" d-inline-block font-weight-bold pb-2">Reviews</h4> {% if reviews %}<i class="fa fa-star text-warning pl-3"></i> {{avg|number_format(1)}} ({{reviews|length}} reviews){% endif %}
+        </div>
+
+        {% for review in reviews %}
+        <div class="col-6 pr-4">
+          <img src="/img/people/{{review.owner.picture}}.jpg" alt="woman" class="img-fluid rounded-circle square-60 d-inline-block mb-3 pb-1 mr-2 ml-2">
+          <div class="d-inline-block"><span class="font-weight-bold">{{review.owner.name|split(' ')[0]}}</span><br><span class="text-muted">{{review.date|date('d/m/Y')}}</span></div>
+          <div class="float-right font-weight-bold mr-3">{{review.booking.service.name}}</div>
+          <p>{{review.comment}}</p>
+        </div>
+        {% else %}
+          <div class="col-12 py-3">No reviews yet.</div>
+        {% endfor %}
+
+        <!-- <div class="col-6 pr-4 pb-3">
+          <img src="/img/people/man6.jpg" alt="man" class="img-fluid rounded-circle square-60 d-inline-block mb-3 pb-1 mr-2 ml-2">
+          <div class="d-inline-block"><span class="font-weight-bold">Devon</span><br><span class="text-muted">14 April 2020</span></div>
+          <div class="float-right font-weight-bold mr-3">Day Care</div>
+          <p>Lila is a fantastic sitter who I would thoroughly recommend, always seamless and our puppies and guinea pigs are all smiles when we get home.</p>
+        </div>
+        <div class="col-6 pr-4">
+          <img src="/img/people/man7.jpg" alt="man" class="img-fluid rounded-circle square-60 d-inline-block mb-3 pb-1 mr-2 ml-2">
+          <div class="d-inline-block"><span class="font-weight-bold">Alexander</span><br><span class="text-muted">07 December 2020</span></div>
+          <div class="float-right font-weight-bold mr-3">Day Care</div>
+          <p>Lila is a fantastic sitter who I would thoroughly recommend, always seamless and our puppies and guinea pigs are all smiles when we get home.</p>
+        </div>
+        <div class="col-6 pr-4 pb-1">
+          <img src="/img/people/woman5.jpg" alt="woman" class="img-fluid rounded-circle square-60 d-inline-block mb-3 pb-1 mr-2 ml-2">
+          <div class="d-inline-block"><span class="font-weight-bold">Theresa</span><br><span class="text-muted">12 March 2020</span></div>
+          <div class="float-right font-weight-bold mr-3">Pet Sitting</div>
+          <p>Lila is a fantastic sitter who I would thoroughly recommend, always seamless and our puppies and guinea pigs are all smiles when we get home.</p>
+        </div> -->
+        {% if reviews %}<div class="col-12 pb-3 text-warning font-weight-bold">See More Reviews</div>{% endif %}
+
+      </div>
+      <hr class="pb-5 mb-5">
+    </div>
+  </div>
+
+
+</div>

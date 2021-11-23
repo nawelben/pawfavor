@@ -1,0 +1,160 @@
+{% extends "layout/base.html.twig" %}
+
+{% block title %}Paw Favor - Home{% endblock %}
+
+{% block body %}
+
+  {% include "includes/navbar.html.twig" %}
+
+
+  <!------------------------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------------------------->
+
+  <!------------------------------------------------------HEAD CONTENT------------------------------------------------->
+
+  <!------------------------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------------------------->
+
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col">
+        <div class="p-3">
+          <h1 class="font-weight-bold pt-0 pb-3">Saved sitters</h1>
+          <div>
+            <span class="text-muted rounded-pill border px-3 py-2">About my pet <small><i class="fas fa-chevron-down pl-2"></i></small></span>
+            <span class="text-muted rounded-pill border px-3 py-2">Housing conditions<small><i class="fas fa-chevron-down pl-2"></i></small></span>
+            <span class="text-muted rounded-pill border px-3 py-2">Budget<small><i class="fas fa-chevron-down pl-2"></i></small></span>
+            <span class="text-muted rounded-pill border px-3 py-2">More filters<small><i class="fas fa-chevron-down pl-2"></i></small></span>
+          </div>
+
+
+          <div class="d-flex mt-5 saved-sitter-row">
+            <img src="/img/people/lila.jpg" alt="p" class="square-200 ">
+            <div class="flex-grow-1 pl-3">
+              <div><small class="text-muted">Dutton Park, QLD </small></div>
+              <div class="h4"> Lila C.</div>
+              <hr class="my-1" style="width:50px; margin-left:0;">
+              <p>Reliable and Caring pet sitter</p>
+              <div>
+                <span class="border rounded-lg px-2 py-1 mr-2"><small><i class="fas fa-award mr-2"></i></small><span class="text-muted">Super sitter</span></span>
+                <div class="pt-4">
+                  <i class="fas fa-star text-warning"></i>
+                  <small class="text-muted ml-2">4,3 (54 reviews)</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex flex-column p-2">
+              <div class="mb-auto ml-auto mr-2 mt-2"><i class="fas fa-heart float-right h5"></i></div>
+              <div class="mt-auto font-weight-bold ml-3 mb-1">Services provided</div>
+
+              <div class="d-flex flex-row">
+                <div class="d-flex mt-auto flex-column">
+                  <div class="d-flex">
+                    <div class="my-auto p-2"><img src="/img/icones/svg/Property 1=Day Care.svg" alt=""></div>
+                    <div>
+                      <p class="mb-0">Day Care</p>
+                      <small class="text-muted d-block">At sitter's home</small>
+                    </div>
+                  </div>
+                  <div class="d-flex">
+                    <div class="my-auto p-2"><img src="/img/icones/svg/Property 1=Dog Walking.svg" alt=""></div>
+                    <div>
+                      <p class="mb-0">Dog Walking</p>
+                      <small class="text-muted d-block">At sitter's home</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex mt-auto flex-column">
+                  <div class="d-flex">
+                    <div class="my-auto p-2"><img src="/img/icones/svg/Property 1=House Visit.svg" alt=""></div>
+                    <div>
+                      <p class="mb-0">Home Visit</p>
+                      <small class="text-muted d-block">At sitter's home</small>
+                    </div>
+                  </div>
+                  <div class="d-flex">
+                    <div class="my-auto p-2"><img src="/img/icones/svg/Property 1=House Sitting.svg" alt=""></div>
+                    <div>
+                      <p class="mb-0">House Sitting</p>
+                      <small class="text-muted d-block">At sitter's home</small>
+                    </div>
+                  </div>
+              </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <hr class="my-2">
+
+
+          <div class="d-flex saved-sitter-row">
+            <img src="/img/people/woman7.jpg" alt="p" class="square-200 ">
+            <div class="flex-grow-1 pl-3">
+              <div><small class="text-muted">St Lucia, QLD </small></div>
+              <div class="h4"> Carolina T.</div>
+              <hr class="my-1" style="width:50px; margin-left:0;">
+              <p>Very flexible, reliable and caring pet sitter</p>
+              <div>
+                <span class="border rounded-lg px-2 py-1 mr-2"><small><i class="fas fa-reply-all mr-2"></i></small><span class="text-muted">100% response rate</span></span>
+                <span class="border rounded-lg px-2 py-1"><small><i class="fas fa-redo mr-2"></i></small><span class="text-muted">6 recurring guests</span></span>
+                <div class="pt-4">
+                  <i class="fas fa-star text-warning"></i>
+                  <small class="text-muted ml-2">4,3 (54 reviews)</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex flex-column p-2">
+              <div class="mb-auto ml-auto mr-2 mt-2"><i class="fas fa-heart float-right h5"></i></div>
+              <div class="mt-auto font-weight-bold ml-3 mb-1">Services provided</div>
+
+              <div class="d-flex flex-row">
+                <div class="d-flex mt-auto flex-column">
+                  <div class="d-flex">
+                    <div class="my-auto p-2"><img src="/img/icones/svg/Property 1=Day Care.svg" alt=""></div>
+                    <div>
+                      <p class="mb-0">Day Care</p>
+                      <small class="text-muted d-block">At sitter's home</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex mt-auto flex-column">
+                  <div class="d-flex">
+                    <div class="my-auto p-2"><img src="/img/icones/svg/Property 1=House Visit.svg" alt=""></div>
+                    <div>
+                      <p class="mb-0">Home Visit</p>
+                      <small class="text-muted d-block">At sitter's home</small>
+                    </div>
+                  </div>
+              </div>
+
+              </div>
+
+            </div>
+          </div>
+
+
+          <hr class="my-2">
+
+
+
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  {% include "includes/footer.html.twig" %}
+
+
+{% endblock %}

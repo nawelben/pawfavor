@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="row">
+        <div class="col-12 pb-2">
+          <h4 class="font-weight-bold">Skills</h4>
+        </div>
+        {% if sitterSkills or sitterLanguages %}
+        {% for sitterSkill in sitterSkills %}
+        <div class="col-6 pb-2">
+          <img src="/img/skills_icons/{{sitterSkill.skill.id}}.svg" alt="" class="img-fluid d-inline-bolck">
+          <div class="d-inline-block mx-2">{{sitterSkill.skill.name}}</div>
+        </div>
+        {% endfor %}
+        
+        {% if sitterLanguages %}
+        <div class="col-6 pb-2">
+          <img src="/img/icones/svg/Property 1=Language.svg" alt="" class="img-fluid d-inline-bolck">
+          <div class="d-inline-block mx-2 pb-4">Speak {% for sitterLanguage in sitterLanguages %} {% if not loop.first %},{% endif %}{{sitterLanguage.language.name}}{% endfor %}</div>
+        </div>
+        {% endif %}
+        {% else %}
+        <div class="col-12 pb-3">This sitter does not indicate having a particular skill.</div>
+        {% endif %}
+      </div>
+      <hr>
+    </div>
+  </div>
+
+</div>

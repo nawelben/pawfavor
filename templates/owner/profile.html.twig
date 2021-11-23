@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello OwnerController!{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+    <h1>Owner Page</h1>
+    <div class="row">
+      <div class="col">
+        Name : {{ owner.name }}
+        <br>
+        Pets count : {{ owner.pets|length }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="div"><a href="{{path('owner_add_pet')}}" class="btn btn-primary">Add pet</a></div>
+    </div>
+</div>
+{% endblock %}

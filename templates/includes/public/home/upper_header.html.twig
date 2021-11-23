@@ -1,0 +1,142 @@
+<div class="container-fluid">
+  <div class="row bg-img-dog">
+    <div class="col" style="margin:80px;padding-top:50px;">
+      <div class="h1 text-white font-weight-bold mb-0">Your best</div>
+      <div class="display-3 font-weight-bold text-white mb-0">friend in</div>
+      <div class="h1 text-warning font-weight-bold mb-0">expert hands</div>
+
+
+
+      <div class="position-relative rounded-pill bg-white vw-30 pl-4 py-2 mt-4">
+        <div class="font-weight-bold">Service</div>
+        <div class=""><span class="index-search-service-name">Choose a service</span>
+          <div  class="container-fluid bg-white py-2 px-3 index-search-services d-none" style="position: absolute; top : 80px; left : 0; width: 100%; box-shadow: -1px 1px 1px #AAAAAA; border-radius: 15px;">
+
+            <div class="row">
+              <div class="col">
+                <div class="row py-1">
+                  <div class="col">
+                    <div class="font-weight-bold">Daytime Service</div>
+                  </div>
+                </div>
+                <div class="row py-1 index-search-service-item" data-content="Day Care">
+                  <div class="col">
+                    <div class="d-flex">
+                      <div class="my-auto p-2"><img src="/img/icones/svg/Property 1=Day Care.svg" alt=""></div>
+                      <div>
+                        <p class="mb-0">Day Care</p>
+                        <small class="text-muted d-block">At sitter's home</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row py-1 index-search-service-item" data-content="Dog Walking">
+                  <div class="col">
+                    <div class="d-flex">
+                      <div class="my-auto p-2"><img src="/img/icones/svg/Property 1=Dog Walking.svg" alt=""></div>
+                      <div>
+                        <p class="mb-0">Dog Walking</p>
+                        <small class="text-muted d-block">Active walks</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row py-1 index-search-service-item" data-content="Home Visits">
+                  <div class="col">
+                    <div class="d-flex">
+                      <div class="my-auto p-2"><img src="/img/icones/svg/Property 1=House visit.svg" alt=""></div>
+                      <div>
+                        <p class="mb-0">Home Visits</p>
+                        <small class="text-muted d-block">At your home</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+              <div class="col">
+                <div class="row py-1">
+                  <div class="col">
+                    <div class="font-weight-bold">Overnight Service</div>
+                  </div>
+                </div>
+                <div class="row py-1 index-search-service-item" data-content="Dutton Park">
+                  <div class="col">
+                    <div class="d-flex">
+                      <div class="my-auto p-2"><img src="/img/icones/svg/Property 1=Home Boarding.svg" alt=""></div>
+                      <div>
+                        <p class="mb-0">Home Boarding</p>
+                        <small class="text-muted d-block">At sitter's home</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row py-1 index-search-service-item" data-content="Dutton Park">
+                  <div class="col">
+                    <div class="d-flex">
+                      <div class="my-auto p-2"><img src="/img/icones/svg/Property 1=House sitting.svg" alt=""></div>
+                      <div>
+                        <p class="mb-0">House Sitting</p>
+                        <small class="text-muted d-block">At your home</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+
+        <div class="index-location rounded-pill bg-white pl-4 py-2">
+          <div class="font-weight-bold">Location</div>
+          <div class="position-relative">
+            &nbsp;
+            <input type="text" placeholder="Enter location" class="form-control position-absolute location_home_input" style="border: none !important;  background-color: transparent;top: -6px; left: -11px;">
+          </div>
+        </div>
+        <form action="/search">
+          <button class="btn btn-warning rounded-circle btn-index-search mt-2 mr-2 btn-lg"><i class="fas fa-search text-white"></i></button>
+          <input type="hidden" class="__hidden_service" name="service">
+          <input type="hidden" class="__hidden_location" name="location">
+        </form>
+        <div class="container-fluid bg-white index-search d-none py-2 px-3">
+          <div class="row py-1 index-search-location-item" data-content="Dutton Park">
+            <div class="col-2 pt-2 text-center"><i class="fas fa-map-marker-alt h4"></i></div>
+            <div class="col">
+              <div>Dutton Park</div>
+              <div class="text-muted" style="margin-top: -4px; line-height: 1"><small>Queensland, Australia</small></div>
+            </div>
+          </div>
+          <div class="row py-1 index-search-location-item" data-content="Dutton Street">
+            <div class="col-2 pt-2 text-center"><i class="fas fa-map-marker-alt h4"></i></div>
+            <div class="col">
+              <div>Dutton Street</div>
+              <div class="text-muted" style="margin-top: -4px; line-height: 1"><small>Coolongataa, Queensland, Australia</small></div>
+            </div>
+          </div>
+          <div class="row py-1">
+            <div class="col">
+              <div class="font-weight-bold">Recent Search</div>
+            </div>
+          </div>
+          <div class="row py-1 index-search-location-item" data-content="Milton Road">
+            <div class="col-2 pt-2 text-center"><i class="fas fa-map-marker-alt h4"></i></div>
+            <div class="col">
+              <div>Milton Road</div>
+              <div class="text-muted" style="margin-top: -4px; line-height: 1"><small>Queensland, Australia</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>

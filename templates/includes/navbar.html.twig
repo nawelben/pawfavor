@@ -1,0 +1,8 @@
+
+{% set currentRouteName = app.request.get('_route') %}
+
+{% if currentRouteName == "public_home" %}
+  {% include "includes/navbars/navbar_transparent.html.twig" %}
+{% else %}
+  {% include "includes/navbars/navbar_white.html.twig" %}
+{% endif %}

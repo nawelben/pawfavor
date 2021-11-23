@@ -1,0 +1,20 @@
+
+  <div class="container pb-5">
+    <div class="row">
+      <div class="col-9">
+        <div class="container border-card p-4">
+          <h4 class="font-weight-bold d-inline-block pb-2">About {{owner.name}}</h4><div class="float-right d-inline-block">{% if ( app.user ) and (owner.id == app.user.id) %}<a href="#" class="text-dark">Edit section</a>{% endif %}</div>
+          <p>{% if owner.ownerAbout %}{{owner.ownerAbout.about}}{% else %}No description yet{% endif %}</p>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="container border-card p-4">
+          <h4 class="font-weight-bold pb-2">{{owner.name|split(' ')[0]}}'s pets</h4>
+          <img src="/img/dog/dog1.jpg" alt="" class="img-fluid square-60 rounded-circle d-inline-block">
+          <img src="/img/dog/dog2.jpg" alt="" class="img-fluid square-60 rounded-circle d-inline-block">
+          <div class="text-center">{% if ( app.user ) and (owner.id == app.user.id) %}<a href="#" class="text-dark"><ins>Edit section</ins></a>{% endif %}</div>
+        </div>
+      </div>
+    </div>
+
+  </div>

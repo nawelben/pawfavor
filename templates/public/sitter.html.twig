@@ -1,0 +1,83 @@
+{% extends "layout/base.html.twig" %}
+
+{% block title %}Paw Favor - Sitter profile{% endblock %}
+
+{% block body %}
+
+  {% include "includes/navbar.html.twig" %}
+
+
+
+
+  <!------------------------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------------------------->
+
+  <!------------------------------------------------------HEAD CONTENT------------------------------------------------->
+
+  <!------------------------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------------------------->
+
+  {% set isSitter = false %}
+  {% for role in sitter.roles %}
+    {% if role == "ROLE_SITTER" %}
+      {% set isSitter = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% if isSitter == true %}
+    {% include "includes/public/sitter/my_profile_sections.html.twig" %}
+
+    {% include "includes/public/sitter/pictures.html.twig" %}
+
+    {% include "includes/public/sitter/about_and_booking.html.twig" %}
+
+    {% include "includes/public/sitter/services.html.twig" %}
+
+    {% include "includes/public/sitter/skills.html.twig" %}
+
+    {% include "includes/public/sitter/pets_accepted.html.twig" %}
+
+    {% include "includes/public/sitter/location.html.twig" %}
+
+    {% include "includes/public/sitter/reviews.html.twig" %}
+
+  {% else %}
+  <p class="p-5">
+      Sorry, this page is unavailable. May be the link is broken or the page has been deleted.
+  </p>
+
+  {% endif %}
+
+
+
+  <!------------------------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------------------------->
+
+  <!------------------------------------------------------FOOTER------------------------------------------------------->
+
+  <!------------------------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------------------------->
+
+  {% include "includes/footer.html.twig" %}
+
+
+{% endblock %}
+
+{% block javascripts %}
+
+<script>
+  $(document).ready(function(){
+    var now = new Date();
+    var month = (now.getMonth() + 1);
+    var day = now.getDate();
+    if (month < 10)
+        month = "0" + month;
+    if (day < 10)
+        day = "0" + day;
+    var today = now.getFullYear() + '-' + month + '-' + day;
+    $('input[name="_start"]').val(today)
+    $('input[name="_end"]').val(today)
+  });
+</script>
+
+{% endblock %}

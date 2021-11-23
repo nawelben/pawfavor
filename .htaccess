@@ -1,0 +1,21 @@
+# Redirect incoming URLs to index.php
+<IfModule mod_rewrite.c>
+
+    
+RewriteEngine On
+
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} !on
+RewriteCond %{HTTP_HOST} ^(?:pawfavor\.)?my-website-dev\.com(?:.*)$ [nc]
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [redirect=301,L]
+
+
+RewriteBase /
+
+RewriteCond %{REQUEST_URI} !^/img/
+RewriteCond %{REQUEST_URI} !^/css/
+RewriteCond %{REQUEST_URI} !^/lib/
+RewriteCond %{REQUEST_URI} !^/js/
+RewriteCond %{REQUEST_URI} !^/favicon/
+RewriteRule ^ public/index.php [QSA,L]
+</IfModule>

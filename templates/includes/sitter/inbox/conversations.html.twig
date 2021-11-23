@@ -1,0 +1,85 @@
+<div class="col-3 position-relative">
+  <h4 class="font-weight-bold p-3 border-bottom">Messages</h4>
+  <div class="messages-col border-right">
+
+    {% for conversation in conversations %}
+
+    <form action="" method="POST">
+
+      <input type="hidden" name="owner_id" value="{{conversation.owner.id}}">
+      <div class="d-flex bd-highlight conversation-header">
+        <div class="p-3">
+          <img src="/img/people/{{conversation.owner.picture}}.jpg" alt="" class="square-60 rounded-circle">
+        </div>
+        <div class="p-2 flex-grow-1 bd-highlight">
+          <p class="mb-0 font-weight-bold">{{conversation.owner.name}}</p>
+          <p class="mb-0 line-clamp-2 ">{{conversation.content}} </p>
+          <p class="mb-0 text-muted">{{conversation.date|date("d/m")}}</p>
+          <!-- <p class="mb-0 text-muted">Awaiting - Dog Walking - 4 Jan.</p> -->
+
+        </div>
+      </div>
+
+    </form>
+
+
+
+    <hr class="my-0 mx-5">
+
+    {% endfor %}
+
+
+    <!-- <div class="d-flex bd-highlight conversation-header">
+      <div class="p-3">
+        <img src="/img/people/shannon.jpg" alt="" class="square-60 rounded-circle">
+      </div>
+      <div class="p-2 flex-grow-1 bd-highlight">
+        <p class="mb-0 font-weight-bold">Shannon P.</p>
+        <p class="mb-0 line-clamp-2 ">That's awesome, I would love to know more about it! How do ...</p>
+        <p class="mb-0 text-muted">Awaiting - Dog Walking - 4 Jan.</p>
+
+      </div>
+    </div>
+
+    <hr class="my-0 mx-5">
+    <div class="d-flex bd-highlight conversation-header">
+      <div class="p-3">
+        <img src="/img/people/shannon.jpg" alt="" class="square-60 rounded-circle">
+      </div>
+      <div class="p-2 flex-grow-1 bd-highlight">
+        <p class="mb-0 font-weight-bold">Shannon P.</p>
+        <p class="mb-0 line-clamp-2 ">That's awesome, I would love to know more about it! How do ...</p>
+        <p class="mb-0 text-muted">Awaiting - Dog Walking - 4 Jan.</p>
+
+      </div>
+    </div>
+
+    <hr class="my-0 mx-5">
+    <div class="d-flex bd-highlight conversation-header">
+      <div class="p-3">
+        <img src="/img/people/shannon.jpg" alt="" class="square-60 rounded-circle">
+      </div>
+      <div class="p-2 flex-grow-1 bd-highlight">
+        <p class="mb-0 font-weight-bold">Shannon P.</p>
+        <p class="mb-0 line-clamp-2 ">That's awesome, I would love to know more about it! How do ...</p>
+        <p class="mb-0 text-muted">Awaiting - Dog Walking - 4 Jan.</p>
+
+      </div>
+    </div>
+
+    <hr class="my-0 mx-5">
+    <div class="d-flex bd-highlight conversation-header">
+      <div class="p-3">
+        <img src="/img/people/shannon.jpg" alt="" class="square-60 rounded-circle">
+      </div>
+      <div class="p-2 flex-grow-1 bd-highlight">
+        <p class="mb-0 font-weight-bold">Shannon P.</p>
+        <p class="mb-0 line-clamp-2 ">That's awesome, I would love to know more about it! How do ...</p>
+        <p class="mb-0 text-muted">Awaiting - Dog Walking - 4 Jan.</p>
+
+      </div>
+    </div> -->
+
+
+  </div>
+</div>
